@@ -1,20 +1,5 @@
-# First level heading 
-## Second level heading
+## edX MIT 6.00x
 ### Third level heading
-#### Fourth level heading
 
-*emphasis* and _emphasis_
-
-**strong_emphasis** and __strong emphasis__
-
-text with some `code text inside` that text
-
-def show_break
-tag_br space space
-end
-
-horizonatal rules
-
-***
-
----
+*6.00x PSET Solutions*
+*Don't plagiarise*

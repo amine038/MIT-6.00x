@@ -1,13 +1,8 @@
-# 6.00 Problem Set 3
-# 
+# 6.00x Problem Set 3
+#  
 # Hangman game
-#
-
-# -----------------------------------
-# Helper code
-# You don't need to understand this helper code,
-# but you will have to know how to use the functions
-# (so be sure to read the docstrings!)
+# Jaskirat Singh
+# 20 October, 2012
 
 import random
 import string
@@ -16,12 +11,8 @@ WORDLIST_FILENAME = "words.txt"
 MAX_GUESSES = 8
 
 def loadWords():
-    """
-    Returns a list of valid words. Words are strings of lowercase letters.
-    
-    Depending on the size of the word list, this function may
-    take a while to finish.
-    """
+    # returns a list of valid words. Words are strings of lowercase letters.
+
     print "Loading word list from file..."
     # inFile: file
     inFile = open(WORDLIST_FILENAME, 'r', 0)
@@ -33,40 +24,27 @@ def loadWords():
     return wordlist
 
 def chooseWord(wordlist):
-    """
-    wordlist (list): list of words (strings)
-
-    Returns a word from wordlist at random
-    """
+    # wordlist (list): list of words (strings)
+    # returns a word from wordlist at random
+    
     return random.choice(wordlist)
 
-# end of helper code
-# -----------------------------------
-
-# Load the list of words into the variable wordlist
-# so that it can be accessed from anywhere in the program
-wordlist = loadWords()
-
 def isWordGuessed(secretWord, lettersGuessed):
-    '''
-    secretWord: string, the word the user is guessing
-    lettersGuessed: list, what letters have been guessed so far
-    returns: boolean, True if all the letters of secretWord are in lettersGuessed;
-      False otherwise
-    '''
+    # secretWord: string, the word the user is guessing
+    # lettersGuessed: list, what letters have been guessed so far
+    # returns: boolean, True if all the letters of secretWord are in lettersGuessed;
+    # False otherwise
+
     for char in secretWord:
         if char not in lettersGuessed:
             return False
     return True
 
-
 def getGuessedWord(secretWord, lettersGuessed):
-    '''
-    secretWord: string, the word the user is guessing
-    lettersGuessed: list, what letters have been guessed so far
-    returns: string, comprised of letters and underscores that represents
-      what letters in secretWord have been guessed so far.
-    '''
+    # secretWord: string, the word the user is guessing
+    # lettersGuessed: list, what letters have been guessed so far
+    # returns: string, comprised of letters and underscores.
+    
     secretWord = list(secretWord)
     index = -1
     for char in secretWord:
@@ -77,11 +55,9 @@ def getGuessedWord(secretWord, lettersGuessed):
 
 
 def getAvailableLetters(lettersGuessed):
-    '''
-    lettersGuessed: list, what letters have been guessed so far
-    returns: string, comprised of letters that represents what letters have not
-      yet been guessed.
-    '''
+    #lettersGuessed: list, what letters have been guessed so far
+    #returns: string, comprised of letters that letters have not yet been guessed.
+    
     availableLetters = list(string.lowercase[0:26])
     index = -1
     for char in availableLetters:
@@ -92,25 +68,6 @@ def getAvailableLetters(lettersGuessed):
     
 
 def hangman(secretWord):
-    '''
-    secretWord: string, the secret word to guess.
-
-    Starts up an interactive game of Hangman.
-
-    * At the start of the game, let the user know how many 
-      letters the secretWord contains.
-
-    * Ask the user to supply one guess (i.e. letter) per round.
-
-    * The user should receive feedback immediately after each guess 
-      about whether their guess appears in the computer's word.
-
-    * After each round, you should also display to the user the 
-      partially guessed word so far, as well as letters that the 
-      user has not yet guessed.
-
-    Follows the other limitations detailed in the problem write-up.
-    '''
 
     guessLeft = MAX_GUESSES
     lettersGuessed = []
@@ -148,14 +105,16 @@ def hangman(secretWord):
             #print separator
             print '-'*12
             print 'Congratulations, you won!'
-            return True
-        continue
+            return True # replace to 'return' for 6.00x grader
 
     # guesses finished, game lost
     print '-'*12
     print 'Sorry, you ran out of guesses. The word was', secretWord + '.'
-    return False
+    return False # replace to return for 6.00x grader
 
-##secretWord = chooseWord(wordlist).lower()
-##secretWord = 'sea'
+# load words in memory
+wordlist = loadWords()
+# choose secret word
+secretWord = chooseWord(wordlist).lower()
+# start the game already!!
 hangman(secretWord)
