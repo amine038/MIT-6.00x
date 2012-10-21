@@ -1,7 +1,13 @@
 # 6.00 Problem Set 3
+# 
 # Hangman game
-# Jaskirat Singh
-# 20 October, 2012
+#
+
+# -----------------------------------
+# Helper code
+# You don't need to understand this helper code,
+# but you will have to know how to use the functions
+# (so be sure to read the docstrings!)
 
 import random
 import string
@@ -34,9 +40,11 @@ def chooseWord(wordlist):
     """
     return random.choice(wordlist)
 
+# end of helper code
+# -----------------------------------
+
 # Load the list of words into the variable wordlist
 # so that it can be accessed from anywhere in the program
-
 wordlist = loadWords()
 
 def isWordGuessed(secretWord, lettersGuessed):
@@ -84,6 +92,26 @@ def getAvailableLetters(lettersGuessed):
     
 
 def hangman(secretWord):
+    '''
+    secretWord: string, the secret word to guess.
+
+    Starts up an interactive game of Hangman.
+
+    * At the start of the game, let the user know how many 
+      letters the secretWord contains.
+
+    * Ask the user to supply one guess (i.e. letter) per round.
+
+    * The user should receive feedback immediately after each guess 
+      about whether their guess appears in the computer's word.
+
+    * After each round, you should also display to the user the 
+      partially guessed word so far, as well as letters that the 
+      user has not yet guessed.
+
+    Follows the other limitations detailed in the problem write-up.
+    '''
+
     guessLeft = MAX_GUESSES
     lettersGuessed = []
     
@@ -128,5 +156,6 @@ def hangman(secretWord):
     print 'Sorry, you ran out of guesses. The word was', secretWord + '.'
     return False
 
-secretWord = chooseWord(wordlist).lower()
+##secretWord = chooseWord(wordlist).lower()
+##secretWord = 'sea'
 hangman(secretWord)
