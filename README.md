@@ -1,5 +1,5 @@
 ## edX MIT 6.00x
 
-*6.00x PSET Solutions*
-tag_br space
+6.00x PSET Solutions
+
 *Don't plagiarise*
