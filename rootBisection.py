@@ -11,5 +11,5 @@ def rootBisection(num, E):
         elif (mid ** 2) < num:
             lower = mid
         mid = (lower + upper)/2.0
-        print iters, upper, lower, mid, abs(mid ** 2 - num)
+        ##print iters, upper, lower, mid, abs(mid ** 2 - num)
     return mid, iters
