@@ -219,7 +219,7 @@ def decryptStory():
     """
     text = getStoryString()
     shift = findBestShift(wordList, text)
-    return applyShift(text, shift)    
+    print applyShift(text, shift)    
     
 #
 # Build data structures used for entire session and run encryption
@@ -228,3 +228,15 @@ def decryptStory():
 if __name__ == '__main__':
     wordList = loadWords()
     decryptStory()
+
+
+################
+##DECRYPTED TEXT
+################
+
+##Jack Florey is a mythical character created on the spur of a moment
+##to help cover an insufficiently planned hack. He has been registered
+##for classes at MIT twice before, but has reportedly never passed a
+##class. It has been the tradition of the residents of East Campus to
+##become Jack Florey for a few nights each year to educate incoming
+##students in the ways, means, and ethics of hacking.
