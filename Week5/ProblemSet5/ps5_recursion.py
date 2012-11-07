@@ -84,4 +84,14 @@ def insertNewlines(text, lineLength):
         the next word.
     returns: a string, with newline characters inserted appropriately. 
     """
-    
+    def insertNewlinesRec(text, lineLength):
+        #base cases
+        if len(text) <= lineLength:
+            return text
+        
+        #insert new line after space
+        if text[lineLength - 1] == " ":
+            return text[:lineLength] + "\n" + insertNewlinesRec(text[lineLength:], lineLength)
+        else:
+            return text[0] + insertNewlinesRec(text[1:], lineLength)
+    return insertNewlinesRec(text, lineLength)

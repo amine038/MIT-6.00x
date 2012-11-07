@@ -12,5 +12,5 @@ def laceStringsRecur(s1, s2):
         if s2 == '':
             return s1
         else:
-            s1.join(s2[0:1])
+            return s1[0] + s2[0] + helpLaceStrings(s1[1:], s2[1:], out)
     return helpLaceStrings(s1, s2, '')
