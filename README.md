@@ -2,4 +2,4 @@
 
 6.00x PSET Solutions
 
-*Don't plagiarise*
+*I'll make sure I push after the deadlines. :)*
